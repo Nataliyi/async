@@ -11,7 +11,7 @@ async def say_after(delay, msg):
 async def run():
     # Wraps co-routine in a task
     task1 = asyncio.create_task(
-        say_after(2, 'hello'))
+        say_after(10, 'hello'))
 
     task2 = asyncio.create_task(
         say_after(2, 'world'))
@@ -21,7 +21,7 @@ async def run():
     # executes tasks concurrently
     # Wait until both tasks are completed (should take
     # around 2 seconds.)
-    await task1
+    # await task1
     await task2
 
     print(f"finished at {time.strftime('%X')}")

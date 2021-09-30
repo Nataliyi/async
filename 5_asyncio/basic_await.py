@@ -3,8 +3,9 @@ import time
 
 
 async def say_after(delay, msg):
-    await asyncio.sleep(delay)  # non-blocking action
     print(msg)
+    await asyncio.sleep(delay)  # non-blocking action
+    
 
 
 async def run():
@@ -13,7 +14,7 @@ async def run():
     # pauses application execution for each coroutine
     # allows the event loop to handle other requests during the pause
 
-    await say_after(2, 'hello')
+    await say_after(10, 'hello')
     await say_after(2, 'world')
 
     # should take 4 seconds to complete
